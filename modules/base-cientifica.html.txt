@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Módulo I - Base Científica</title>
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <style>
+    .section {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+
+    .section:hover {
+      transform: scale(1.02);
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: #22c55e;
+      color: black;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Módulo I: Base Científica</h1>
+</header>
+
+<main class="dashboard">
+
+  <!-- ANATOMÍA -->
+  <div class="section">
+    <h2>🦴 Anatomía</h2>
+    <p>Estudia la estructura del cuerpo humano (músculos, huesos, articulaciones).</p>
+
+    <button onclick="toggle('anat')">Ver más</button>
+    <div id="anat" class="hidden">
+      <p><strong>Clave:</strong> conocer origen, inserción y función muscular.</p>
+      <p>Ejemplo: el cuádriceps extiende la rodilla.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Quadriceps_femoris.png" width="200">
+    </div>
+  </div>
+
+  <!-- FISIOLOGÍA -->
+  <div class="section">
+    <h2>❤️ Fisiología</h2>
+    <p>Estudia cómo funciona el cuerpo.</p>
+
+    <button onclick="toggle('fisio')">Ver más</button>
+    <div id="fisio" class="hidden">
+      <p>Adaptaciones: aumento de fuerza, resistencia, hipertrofia.</p>
+      <p>Ejemplo: el entrenamiento genera cambios en el sistema muscular y nervioso.</p>
+    </div>
+  </div>
+
+  <!-- BIOMECÁNICA -->
+  <div class="section">
+    <h2>⚙️ Biomecánica</h2>
+    <p>Analiza el movimiento humano.</p>
+
+    <button onclick="toggle('bio')">Ver más</button>
+    <div id="bio" class="hidden">
+      <p>Ejemplo: una mala técnica en sentadilla aumenta riesgo de lesión.</p>
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/aclHkVaku9U"></iframe>
+    </div>
+  </div>
+
+  <!-- HISTOLOGÍA -->
+  <div class="section">
+    <h2>🔬 Histología (resumido)</h2>
+    <p>Estudia los tejidos del cuerpo.</p>
+
+    <button onclick="toggle('histo')">Ver más</button>
+    <div id="histo" class="hidden">
+      <p>Importante para entender recuperación y lesiones.</p>
+      <p>Ejemplo: tejido muscular vs tejido conectivo.</p>
+    </div>
+  </div>
+
+  <!-- NUTRICIÓN -->
+  <div class="section">
+    <h2>🥗 Nutrición</h2>
+    <p>Base para rendimiento y recuperación.</p>
+
+    <button onclick="toggle('nutri')">Ver más</button>
+    <div id="nutri" class="hidden">
+      <p>Proteínas → reparación muscular</p>
+      <p>Carbohidratos → energía</p>
+      <p>Grasas → funciones hormonales</p>
+    </div>
+  </div>
+
+  <!-- CONTROL MOTOR -->
+  <div class="section">
+    <h2>🧠 Control Motor</h2>
+    <p>Cómo el sistema nervioso controla el movimiento.</p>
+
+    <button onclick="toggle('motor')">Ver más</button>
+    <div id="motor" class="hidden">
+      <p>Clave en rehabilitación y técnica.</p>
+      <p>Ejemplo: coordinación y activación muscular.</p>
+    </div>
+  </div>
+
+  <!-- ADAPTACIONES -->
+  <div class="section">
+    <h2>📈 Adaptaciones al entrenamiento</h2>
+    <p>Cambios que ocurren con el entrenamiento.</p>
+
+    <button onclick="toggle('adapt')">Ver más</button>
+    <div id="adapt" class="hidden">
+      <p>Hipertrofia, fuerza, resistencia.</p>
+      <p>Dependen de carga, volumen e intensidad.</p>
+    </div>
+  </div>
+
+  <!-- PRINCIPIOS -->
+  <div class="section">
+    <h2>📊 Principios del entrenamiento</h2>
+    <p>Reglas fundamentales.</p>
+
+    <button onclick="toggle('principios')">Ver más</button>
+    <div id="principios" class="hidden">
+      <p>✔ Sobrecarga progresiva</p>
+      <p>✔ Especificidad</p>
+      <p>✔ Individualización</p>
+      <p>✔ Periodización (micro, meso, macro)</p>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="section">
+    <h2>🧪 Mini Quiz</h2>
+
+    <p>¿Qué principio implica aumentar progresivamente la carga?</p>
+
+    <button onclick="quiz('mal')">Especificidad</button>
+    <button onclick="quiz('bien')">Sobrecarga</button>
+    <button onclick="quiz('mal')">Variabilidad</button>
+
+    <p id="resultado"></p>
+  </div>
+
+</main>
+
+<script>
+  function toggle(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle("hidden");
+  }
+
+  function quiz(resp) {
+    const r = document.getElementById("resultado");
+
+    if (resp === "bien") {
+      r.innerHTML = "✔ Correcto";
+    } else {
+      r.innerHTML = "❌ Incorrecto";
+    }
+  }
+</script>
+
+</body>
+</html>
